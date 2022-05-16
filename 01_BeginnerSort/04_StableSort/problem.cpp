@@ -19,9 +19,9 @@ bool isStable(vector<Card>& indata, vector<Card>& outdata){
             for(int a = 0; a < indata.size(); a++){
                 for(int b = a+1; b < indata.size(); b++){
                     if( indata.at(i).value == indata.at(j).value 
-                        && indata.at(i).suit == outdata.at(b).suit 
-                        && indata.at(j).suit == outdata.at(a).suit){
-                        return false;
+                        && indata.at(i).suit == outdata.at(b).suit && indata.at(i).value == outdata.at(b).value
+                        && indata.at(j).suit == outdata.at(a).suit && indata.at(j).value == outdata.at(a).value){
+                            return false;
                     }
                 }
             }
@@ -77,7 +77,7 @@ int main(){
     if(isStable(indata, Bubbledata)){
         cout << "Stable" << endl;
     }else{
-        cout << "Not Stable" << endl;
+        cout << "Not stable" << endl;
     }
 
     SelectionSort(SelectionData);
@@ -85,7 +85,7 @@ int main(){
     if(isStable(indata, SelectionData)){
         cout << "Stable" << endl;
     }else{
-        cout << "Not Stable" << endl;
+        cout << "Not stable" << endl;
     }
 
     return 0;
