@@ -17,7 +17,7 @@ void nl_trace(vector<int>& data){
 void InsertionSort(vector<int>& data, int interval_idx, int& cnt){
     int v, j = 0;
 
-    for(int i = interval_idx; i < data.size(); i = i+interval_idx){
+    for(int i = interval_idx; i < data.size(); i++){
         v = data.at(i);
         j = i - interval_idx;
         while( j>=0 && data.at(j)>v){
